@@ -13,12 +13,29 @@ $ pip install -r requirements.txt
 
 ### 2. Preparing Data
 
-**Folder structure**
-To prepare your dataset for training using our implementation you will have to prepare two folders one for image and one for labels. For any image path in image folder a corresponding label file (same name but .txt extension) is searched in the labels folder. If the label file is found the image and labels will be used in the training process. 
+**Folder Structure**
+
+To prepare your dataset for training using our implementation you will have to prepare two folders one for images and one for labels. For any image path in image folder a corresponding label file (same name but .txt extension) is searched in the labels folder. If the label file is found the image and labels will be used in the training process. 
 
 Here is an example of the directory structure for the train folder. 
 
 ![](image.png)
+
+**File Structure for each label file**
+
+For each image in image folder its label file is a txt file which will contain the details of all the bounding boxes in the image. The format of the txt file is as follows 
+
+```
+x1, y1, x2, y2, id
+x1, y1, x2, y1, id
+...
+```
+
+Where each line will represent a single object in the image.
+
+* x1, y1: coordinate of the upper left corner
+* x2, y2: coordinate of the lower left corner
+* id: category id of the object
 
 
 ### 3. Training
